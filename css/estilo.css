@@ -5,8 +5,8 @@
 body {
 	width: 1500px;
 	margin: auto;
-    background-image: url("../imagenes/cool-background.png");
-    background-repeat:space;
+    background-image: url("../imagenes/y-so-serious-white.png");
+    background-repeat:round;
 }
 
 
@@ -16,13 +16,13 @@ body {
 /**************************************************************************/
 
 #cabecera {
-    text-align: center;
+    margin-top: 20px;
     color: red;
 }
 
 #cabecera > img {
-    text-align: left;
-    width: 700px;
+    width: 1550px;
+    height: 250px;
     
 }
 
@@ -42,17 +42,15 @@ body {
     list-style: none outside none;
     margin: 0px;
     padding: 0px;
-    background-color: #F8F8FF;
+    background-color: rgba(245, 237, 237, 0.7);
     border-bottom: 5px solid #333333;
     float: left;
-    position: relative;
 }
 
 #menu > ul > li {
     border-bottom: 5px solid transparent;
     float: left;
     margin-bottom: -5px;
-    text-align: center;
  
 }
 
@@ -87,7 +85,6 @@ body {
     margin-right: auto;
     margin-left: auto;
     
-    margin-bottom: auto;
     display: table;  
     /*background: rgb(255, 255, 255); /* Si no soporta transparencia, opaco */
    /* background: rgba(255, 255, 255, 0.7);*/
@@ -102,25 +99,48 @@ body {
 
 #main #Central {
     width: 75%;
-    float: right;
-    
+    position: relative;
+    display: inline-block;
     height: 100%;
 }
 #main table{
-    
+    position: relative;
     margin-left: auto;
     margin-right: auto;
     padding-right: 0;
-    padding-top: 10px;
     width: 100%;
     height: 100%;
-    text-align: left;
-    color: red;
+    text-align: center;
+    clear: both;
 }
 
+#main table td span {
+    position: absolute;
+    background-position: center;
+    color: #f31111  ;
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    top: 10px;
+    z-index:3;
+}
+
+#main #eventos #f1 span{
+    top: 200px;
+}
+#main table td img {
+    display: inline-block;
+    height: 180px;
+    width: 200px;
+    text-align: center;
+    border-radius:  10px;
+}
+
+  
 #main aside {
     padding-top: 10px;
     width: 20%;
+    height: 70%;
     float: left;
     background: rgba(255, 255, 255, 0.4);
 }
@@ -149,26 +169,76 @@ body {
     color: #253bff;
 }
 
-#main #content #eventos{
-    border-collapse: collapse;
-    width: 100%;
+#Lateral ul{
+    
+    list-style: none;
+    font-size: 20px;
+    height: 10px;
+    font-size: 25px;
+}
+#Lateral a{
+    text-decoration: none;
+    color:rgb(24, 24, 24);
+
+}
+
+#Lateral ul a:hover {
+    color: #FFFFFF;
+    background: #333333;
+    background: rgba(0,0,0,0.75);
+}
+
+#Bajo {
+    margin: 20px 20px;
+    padding: 10px;
+    clear: both;
+    color: #333333;
+    
+}
+
+#Bajo h1 {
+    font-weight: bolder;
+    font-size: 40px;
+    color: #f8fcff;
+    border-bottom: 2px solid #333333;
+    margin-bottom: 10px;
+}
+
+#Bajo > #contacto > ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+#Bajo > #contacto > ul > li {
+    margin: 5px;
+    font-size: 20px;
+    color: #333333;
+}
+
+#Bajo > #contacto > ul > li a {
+    color: #333333;
+}
+
+
+#Bajo > #copyright {
     text-align: center;
-  }
-
-  
-#eventos td span{
-    position: relative;
-    top: 125px;
-    background-position: center center;
-    color: #FFFFFF  ;
-    font-size: 16px;
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 5px;
-
-    z-index:3;
-  }
+    font-size: 12px;
+    color: #555;
+}
 
 
-#abajo{
-    padding-top: 200px;
+
+/**************************************************************************/
+/* Eventos *******************************************************************/
+/**************************************************************************/
+
+#main #CentralEvento{
+    width: 75%;
+    margin-left: 20px;
+    display: inline-block;
+    height: auto;
+}
+
+#main #CentralEvento img{
+    float: right;
 }
