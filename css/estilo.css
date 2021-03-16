@@ -1,5 +1,6 @@
 *{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
 
 body {
@@ -7,6 +8,8 @@ body {
 	margin: auto;
     background-image: url("../imagenes/y-so-serious-white.png");
     background-repeat:round;
+    transform:scale(0.75);
+    transform-origin: top;
 }
 
 
@@ -92,7 +95,7 @@ body {
     font-size: 20px;
     width: 1500px;
     
-    height: 300px;
+    height: 700px;
     overflow: visible;
 }
 
@@ -140,7 +143,7 @@ body {
 #main aside {
     padding-top: 10px;
     width: 20%;
-    height: 70%;
+    height: 75%;
     float: left;
     background: rgba(255, 255, 255, 0.4);
 }
@@ -179,8 +182,34 @@ body {
 #Lateral a{
     text-decoration: none;
     color:rgb(24, 24, 24);
-
 }
+#Lateral ul li{
+    margin-bottom:15px;
+}
+
+#InfoEvento {
+    margin-top:250px;
+}
+#InfoEvento h1{
+    font-size: 30px;
+}
+#InfoEvento a{
+    margin-left: 30px;
+    font-size:40px;
+}
+
+#InfoEvento #btn-twitter{
+    color: #00acee;
+}
+
+
+#InfoEvento ul a:hover {
+    color: #FFFFFF;
+    background: #333333;
+    background: rgba(0,0,0,0.75);
+}
+
+
 
 #Lateral ul a:hover {
     color: #FFFFFF;
@@ -188,9 +217,9 @@ body {
     background: rgba(0,0,0,0.75);
 }
 
+
 #Bajo {
     margin: 20px 20px;
-    padding: 10px;
     clear: both;
     color: #333333;
     
@@ -237,8 +266,42 @@ body {
     margin-left: 20px;
     display: inline-block;
     height: auto;
+    margin-right: -300px;
+}
+#main #CentralEvento h1{
+    margin-top:-30px;
+    font-size: 50px;
+    margin-bottom: -10px;
+}
+#CentralEvento h2{
+    font-size: 30px;
 }
 
-#main #CentralEvento img{
+#CentralEvento1 img{
     float: right;
+    height: 500px;
+    width:400px;
+    margin-top:-100px;
+}
+
+
+
+#main #CentralEvento2{
+    margin-left: 20px;
+    display:inline-block;
+    height: auto;
+    text-align: left;
+
+}
+
+#CentralEvento2 #imagen img{
+    float: right;
+    display:inline-block;
+}
+#CentralEvento2 #imagen2 img{
+    float: left;
+    height: 300px;
+    width:500px;
+    display:inline-block;
+    margin-right: 20px;
 }
