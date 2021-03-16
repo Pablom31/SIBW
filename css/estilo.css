@@ -9,7 +9,7 @@ body {
     background-image: url("../imagenes/y-so-serious-white.png");
     background-repeat:round;
     transform:scale(0.75);
-    transform-origin: top;
+    transform-origin: center top;
 }
 
 
@@ -20,11 +20,10 @@ body {
 
 #cabecera {
     margin-top: 20px;
-    color: red;
 }
 
 #cabecera > img {
-    width: 1550px;
+    width: 1500px;
     height: 250px;
     
 }
@@ -119,22 +118,21 @@ body {
 
 #main table td span {
     position: absolute;
-    background-position: center;
-    color: #f31111  ;
-    font-size: 20px;
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 5px;
-    top: 10px;
+    background-position: center center;
+    color:rgba(202, 207, 248, 0.7)  ;
+    font-size: 28px;
+    background: rgba(0, 0, 0, 0.75);
+    border-right-width: 220px;
     z-index:3;
+    text-align: center;
+    margin-top: 200px;
 }
 
-#main #eventos #f1 span{
-    top: 200px;
-}
 #main table td img {
+    position:relative;
     display: inline-block;
-    height: 180px;
-    width: 200px;
+    height: 200px;
+    width: 220px;
     text-align: center;
     border-radius:  10px;
 }

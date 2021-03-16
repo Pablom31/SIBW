@@ -40,6 +40,9 @@ body {
 #CentralEvento h2{
     font-size: 30px;
 }
+#CentralEvento p{
+    font-size: 25px;
+}
 
 #CentralEvento1 img{
     float: right;
