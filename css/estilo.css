@@ -8,6 +8,8 @@ body {
 	margin: auto;
     background-image: url("../imagenes/y-so-serious-white.png");
     background-repeat:round;
+    transform:scale(0.75);
+    transform-origin: center;
 }
 
 
@@ -184,7 +186,8 @@ body {
 }
 
 #InfoEvento {
-    margin-top:250px;
+    position: relative;
+    padding-top:250px;
 }
 #InfoEvento h1{
     font-size: 30px;
