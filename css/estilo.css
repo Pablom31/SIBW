@@ -9,7 +9,7 @@ body {
     background-image: url("../imagenes/y-so-serious-white.png");
     background-repeat:round;
     transform:scale(0.75);
-    transform-origin: center top;
+    transform-origin: top;
 }
 
 
