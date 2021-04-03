@@ -148,14 +148,14 @@ body {
 /* LATERAL *******************************************************************/
 /**************************************************************************/
 
-#main aside {
+#main #Lateral_izquierda {
     padding-top: 10px;
     width: 20%;
     height: 75%;
     float: left;
     background: rgba(255, 255, 255, 0.4);
 }
-#main aside h1 {
+#main #Lateral_izquierda h1 {
     padding-left: 10px;
     padding-top: 10px;
     font-size: 30px;
@@ -211,6 +211,7 @@ body {
     position:relative;
     height: 20%;
     margin-top:250px;
+    float:left;
 }
 #InfoEvento h1{
     font-size: 30px;
@@ -281,16 +282,16 @@ body {
 /**************************************************************************/
 
 #main #CentralEvento{
-    width: 75%;
+    width: 59%;
     margin-left: 20px;
     display: inline-block;
     height: auto;
-    margin-right: -300px;
 }
 #main #CentralEvento h1{
     margin-top:-30px;
     font-size: 50px;
     margin-bottom: -10px;
+    display:inline-block;
 }
 #CentralEvento h2{
     font-size: 30px;
@@ -299,17 +300,104 @@ body {
 #CentralEvento1 #imagen1{
     display: relative;
     float: right;
-    height: 500px;
-    width:400px;
     margin-top:-100px;
     margin-bottom: 50px;
 }
 #CentralEvento1 #imagen1 img{
     display: relative;
     float: right;
-    height: 500px;
-    width:400px;
-    margin-top:-100px;
+    height: 400px;
+    width:300px;
+}
+
+/**************************************************************************/
+/* ASIDE COMENTARIOS  *******************************************************************/
+/**************************************************************************/
+#comentarios {
+    float: right;
+    width:19%;
+    position:relative;
+    background-color: rgba(253, 247, 247, 0.60);
+}
+
+#comentarios #boton{
+    width:45px;
+    margin-left: 80px;
+    margin-top: 30px;
+}
+#comentarios #boton button{
+    width:max-content;
+}
+
+#comentarios h1{
+    font-size: 25px;
+    text-align: center;
+    border-bottom: 5px rgba(0, 0, 0, 0.75);
+}
+#comentarios h1:hover{
+    cursor: pointer;
+}
+
+#comentarios #tablon{
+    margin-left:10px;
+    margin-right: 10px;
+
+}
+
+#comen {
+    border-bottom: 5px solid;
+}
+
+
+
+#comentarios #tablon #nombre-comen{
+    font-size:25px;
+}
+
+#comentarios #tablon #fecha-comen{
+    font-size:15px;
+    float: right;
+    margin-top: -56px;
+}
+
+#comentarios #tablon #Comentario-comen{
+    font-size:20px;
+}
+
+#comentarios #formu{
+    margin-left: 20px;
+    margin-top:40px;
+    background-color: rgba(248, 248, 248, 0.60);
+}
+#comentarios #formu label{
+    font-size:auto;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: -25px;
+}
+
+#comentarios #formu input{
+
+    border-width: 1px ;
+    width:200px;
+    font-size:auto;
+    margin-bottom: 5px;
+}
+
+#comentarios #formu textarea{
+
+    border-width: 1px ;
+    width:200px;
+    font-size:auto;
+}
+#comentarios button{
+    margin-right: 80px;
+    border-width: 1px;
+    margin-bottom: 10px;
+    float:right;
+}
+#comentarios button:hover{
+    cursor: pointer;
 }
 
 
@@ -324,8 +412,8 @@ body {
     height: auto;
     text-align: left;
 
-}#CentralEvento2 #imagen
-{
+}
+#CentralEvento2 #imagen{
     float: right;
     display:inline-block;
     margin-left:15px;
@@ -335,7 +423,7 @@ body {
 }
 
 #CentralEvento2 #imagen img{
-    float: right;
+    float:right;
     display:inline-block;
 }
 

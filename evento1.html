@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/d62dcb8401.js" crossorigin="anonymous"></script>
     <title>EVENTOS GRANADA</title> 
     <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+    <script type="text/javascript" src="js/formulario.js" defer></script>
 </head>
 <body >
     <header id="cabecera">
@@ -26,7 +27,7 @@
     </header>
 
     <div id="main">
-        <aside>
+        <aside id=Lateral_izquierda>
             <div id="redesSociales">
                     <h1>Redes Sociales</h1>
                     <a id="btn-twitter" href="#"><i class="fa fa-twitter"></i></a>                   
@@ -64,11 +65,45 @@
                   </div>
                 <p>Ciudadanos ilustres de Cornellá (junto con La Banda Trapera) los hermanos Muñoz han hecho del Rumba un arte inagotable tras las esencias de Peret y Gato Pérez. Con cinco millones de discos vendidos han conseguido a base de gracejo, cotidianidad y simpatía que la rumba sea global, y ahí siguen, dieciocho años depues, ¡'Rumba a lo desconocido'!</p>
                 <p>Además de repasar sus canciones que ya son himnos de la historia de la música de este país. Estopa ha iniciado un emocionante viaje musical produciendo su último disco ellos mismos y a la vez haciendo equipo con Rafa Sardina, ganador de 12 Premios Grammy y que ha colaborado con Stevie Wonder, Michael Jackson, Elvis Costelo…, y Cheche Alara también galardonado con varios Grammy y colaborador de grandes de la música. Si se tuviera que definir con una sola palabra el sonido de este nuevo disco habría que inventarla, y podría ser “RumbaRock”.</p>
-                
+
             </article>
             </div>
-            
+        
         </div>
+
+            <aside id="comentarios">
+                <h1 onclick="mostrar();">COMENTARIOS</h1>
+                <div id="cerrar"  style="display: none">
+                    <div id="tablon">
+                        <div id="comen">
+                            <p id="nombre-comen">Pepito Grillo</p>
+                            <p id="fecha-comen"> 2-4-2021 18:52</p>
+                            <p id="Comentario-comen">Me encanta la pagina y tengo ganas de ir al concierto</p>
+                        </div>
+                        <div id="comen">
+                            <p id="nombre-comen">Jaimito</p>
+                            <p id="fecha-comen"> 2-4-2021 18:52</p>
+                            <p id="Comentario-comen">Esta web es muy mala</p>
+                        </div>
+                        
+                    </div>
+                <form id="formu">
+                    <label for="fname">Nombre:</label><br>
+                    <input type="text" id="fname" name="fname"><br>
+
+                    <label for="lname">Correo:</label><br>
+                    <input type="text" id="correo" name="correo"><br>
+
+                    <label for="fname">Comentario:</label><br>
+                    <textarea name="comentario" id="coment" rows="10" onkeypress="palabrasProhibidas()"></textarea><br>
+                </form>
+                <button onclick="Enviar();">Enviar</button>
+            </div>
+
+
+        </aside>
+
+        
 
         <footer id="Bajo">
             <div id="contacto">
