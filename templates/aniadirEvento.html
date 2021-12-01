@@ -1,0 +1,46 @@
+
+
+{% extends "padre.html" %}
+
+{% block aniadirHEAD %}
+<script type="text/javascript" src="js/formulario.js" defer></script>
+{% endblock %}
+
+
+{% block central %}
+
+<div class="modify" id="modificaEvento">
+    <h1>AÑADIR EVENTO</h1><br>
+
+    <form action="aniadirEvento.php" method="post">
+        <a>Titulo:<br></a>
+        <input type="text" name="titulo" id="titulo"  /><br>
+
+        <a>Nombre portada:<br></a>
+        <input type="text" name="nombre" id="nombre" /><br>
+
+        <a>Organizado por:<br></a>
+        <input type="text" name="autor" id="autor" /><br>
+        <a>Fecha:<br></a>
+        <input type="text" name="fecha" id="fecha" /><br>
+        <a>Link evento:<br></a>
+        <input type="text" name="linkEvento" id="linkEvento" /><br>
+        <a>Twitter:<br></a>
+        <input type="text" name="twitter" id="twitter" /><br>
+
+
+        <a>Texto:<br></a>
+        <textarea name="texto" id="texto" row="30" column="20" value=""></textarea><br><br>
+        Nota: Para añadir imagenes pincha en confirmar 
+        <input type="submit" value="Confirmar" id="confirmar" /><br><br>
+
+
+    </form>
+
+
+
+</div>
+
+
+
+{% endblock %}

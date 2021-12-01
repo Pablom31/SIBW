@@ -1,0 +1,31 @@
+{% extends "padre.html" %}
+
+{% block central %}
+
+<div class="modify" id="modificaPermisos">
+    <h1>Usuarios</h1><br>
+    {% for usuario in usuarios %}
+    <div id="permisos">
+        
+        <form action="gestionarPermisos.php?us={{usuario.nombre}}" method="post">
+            <div id="usuario"><a>{{usuario.nombre}}:<br></a>
+            <div id="permisos2" >
+                <a>Moderador:</a><input type="checkbox" {% if usuario.moderador %} checked {% endif %} name="moderador" id="moderador" value="1"><br>
+                <a>Gestor:</a><input type="checkbox" {% if usuario.gestor_sitio %} checked {% endif %} name="gestor" id="gestor" value="1"><br>
+                <a>SuperUsuario:</a><input type="checkbox" {% if usuario.super %} checked {% endif %} name="super" id="super" value="1"><br>
+            </div>
+
+            <input type="submit" value="Confirmar" id="confirmar" /><br><br></div>
+        
+        </form>
+    </div>
+    {% endfor %}
+
+
+
+
+</div>
+
+
+
+{% endblock %}

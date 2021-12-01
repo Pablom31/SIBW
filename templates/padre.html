@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    {% block head %}
+        <head>
+
+                <!-- Pablo Francisco Puga Martínez -->
+                <meta charset="UTF-8">
+                <link rel="shortcut icon" type="imagenes/alhambra" href="imagenes/alhambra.ico" />
+                <!--<meta name="viewport" content="width=device-width, initial-scale=0.">
+                <meta http-equiv="X-UA-Compatible" content="ie=chrome"> -->
+                <script src="https://kit.fontawesome.com/d62dcb8401.js" crossorigin="anonymous"></script>
+                <title>EVENTOS GRANADA</title> 
+                {% block css %}
+                    <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+                {% endblock %}
+                {% block aniadirHEAD %}
+                {% endblock %}
+
+        </head>
+    {% endblock %}
+
+<body >
+    {% block cabecera %}
+        <header id="cabecera">
+            <img alt="cabecera" src="imagenes\banner3.jpg"/>
+
+        
+        <nav id="menu">
+            <ul>
+                <li><a  href="index.php">Inicio</a></li>
+                <li><a>Quiénes somos</a></li>
+                <li><a>Servicios</a></li>
+                {% if user %}<li><a href="modificarPerfil.php"><i class="fas fa-user"></i> {{user.nombre}} <i class="fa fa-pencil"
+                        aria-hidden="true"></i></a></li>{% endif %}
+
+                {% if user.moderador %}<li><a href="mostrarComentarios.php" method=""><i class="fas fa-comment"></i> Gestionar comentarios </a>
+                </li>{% endif %}
+                {% if user.super %}<li><a href="gestionarPermisos.php" method=""><i class="fas fa-lock"></i> Gestionar permisos </a></li>{% endif %}
+            </ul>
+        </nav>
+        {% if not user %}
+            <div action="login.php" id="boton_login">
+                <a href="login.php">Iniciar sesion </a><i class="fa fa-sign-in" aria-hidden="true"></i>
+            </div>
+        {% endif %}
+
+        {% if user %}
+            <div id="boton_login">
+                <a href="logout.php">Cerrar sesion </a><i class="fas fa-sign-out-alt"></i>
+            </div>
+
+        {% endif %}
+        </header>
+    {% endblock %}
+
+    {% block main %}
+        <div id="main">
+            {% block lateral %}
+                <aside id=Lateral_izquierda>
+                    <div id="redesSociales">
+                            <h1>Redes Sociales</h1>
+                            <a id="btn-twitter" href="#"><i class="fa fa-twitter"></i></a>                   
+                            <a id="btn-instagram" href="#"><i class="fa fa-instagram"></i></a>
+                            <a id="btn-facebook" href="#"><i class="fa fa-facebook-official"></i></a>
+                    </div>
+                    <div id="Lateral">
+                        <h1>Enlaces de interes</h1>   
+                        <ul>
+                            <li><a href="http://www.granada.es/">Ayuntamiento de Granada</a></li>
+                            <li><a href="http://www.ugr.es/">Universidad de Granada</a></li>
+                            <li><a href="http://etsiit.ugr.es/">Escuela Técnica Superior de Ingenierías Informática y de Telecomunicación</a></li>
+                            <li><a href="http://www.pradogrado2021.ugr.es/">Prado</a></li>
+                        </ul>  
+                    {% block aniadirLateral %}
+                    {% endblock %}       
+                    </div>
+                </aside>
+            {% endblock %}
+            {% block central %}
+
+            {% endblock %}
+            {% block footer %}
+                <footer id="Bajo">
+                    <div id="contacto">
+                        <h1>Contacto</h1>
+                        <ul>
+                            <li><i class="fa fa-home"></i>ETSIIT</li>
+                            <li><i class="fa fa-user"></i>Pablo Francisco Puga Martínez</li>
+                            <li><i class="fa fa-envelope"></i><a href="mailto:pablopm31@correo.ugr.es">pablopm31@correo.ugr.es</a></li>
+                        </ul>
+                    </div>
+                    <div id="copyright">
+                        <p>Copyright ©. Todos los derechos reservados. Sitio creador por Pablo Francisco Puga Martínez.</p>
+                    </div>
+                </footer>
+            {% endblock %}
+        </div>
+    {% endblock %}
+</body>
+</html>

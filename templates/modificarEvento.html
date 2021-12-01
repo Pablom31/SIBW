@@ -1,0 +1,65 @@
+{% extends "padre.html" %}
+
+{% block aniadirHEAD %}
+<script type="text/javascript" src="js/formulario.js" defer></script>
+{% endblock %}
+
+
+{% block central %}
+
+<div class="modify" id="modificaEvento">
+    <h1>Modificar evento</h1><br>
+
+    <form action="modificarEvento.php" method="post">
+        <a>Titulo:<br></a>
+
+        <input type="text" name="id" style="display:none" id="id" value="{{evento.id}}" /><br>
+
+
+        <input type="text" name="titulo" id="titulo" value="{{evento.titulo}}" /><br>
+
+        <a>Nombre portada:<br></a>
+        <input type="text" name="nombre" id="nombre" value="{{evento.nombre}}" /><br>
+
+        <a>Organizado por:<br></a>
+        <input type="text" name="autor" id="autor" value="{{evento.autor}}" /><br>
+        
+        <a>Fecha:<br></a>
+        <input type="text" name="fecha" id="fecha" value="{{evento.fecha}}"/><br>
+
+        <a>Link evento:<br></a>
+        <input type="text" name="linkEvento" id="linkEvento" value=""/><br>
+
+        <a>Twitter:<br></a>
+        <input type="text" name="twitter" id="twitter" value="{{evento.twitter}}"/><br>
+
+
+        <a>Texto:<br></a>
+        <textarea name="texto" id="texto" row="30" column="20" value="">{{evento.texto}}</textarea><br><br>
+        
+        <input type="submit" value="Confirmar" id="confirmar" /><br><br>
+
+
+    </form>
+
+    <form action="modificarImagenes.php?ev={{evento.id}}" method="post" enctype="multipart/form-data">
+
+        <input type="text" name="id" style="display:none" id="id" value="{{evento.id}}" /><br>
+        <br><a>Añadir Imagen(file_size < 2097152)</a><br><br>
+        <input type="file" name="imagen" id="imagen"/><br>
+        <input type="text" name="cabecera" id="cabecera" /><br>
+
+        <input type="submit" value="Mandar imagen" id="confirmar"/>
+    
+    
+    </form>
+
+            <form action="formulario.php" method="post" >
+
+            </form>
+
+</div>
+
+
+
+{% endblock %}

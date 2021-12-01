@@ -1,0 +1,123 @@
+{% extends "padre.html" %}
+
+
+    {% block css %}
+        {% if imp==1 %}
+            <link rel="stylesheet" type="text/css" href="css/estilo_imprimir.css" />
+        {% endif %}
+
+        {% if imp==0%}
+            <link rel="stylesheet" type="text/css" href="css/estilo.css" />
+        {% endif %}
+    {% endblock %}
+
+    {% block aniadirHEAD %}
+    <script type="text/javascript" src="js/formulario.js" defer></script>
+    {% endblock %}
+
+    
+        {% block aniadirLateral %}
+                <div id="aniadirPalabras" style="display: none")>{% for palabra in palabras %}{{palabra}} {% endfor %}</div>
+            <div id="InfoEvento">
+                <h1>Sobre el Evento </h1>
+                    <a href="{{evento.linkEvento}}"><i class="fas fa-external-link-alt"></i></a>
+                    <a href="evento.php?ev={{evento.id}}&imp=1"><i class="fas fa-print"></i></a>
+                    <a href="{{evento.twitter}}" id="btn-twitter" href="#"><i class="fa fa-twitter"></i></a>  
+                {% if user.gestor_sitio %} 
+                <br><br><h1>Editar evento </h1>
+                <a href="modificarEvento.php?ev={{evento.id}}"><i class="fas fa-pencil-alt"></i></a>
+                <a href="eliminarEvento.php?ev={{evento.id}}" id="eliminar" href="#"><i class="fas fa-trash-alt"></i></a>
+                {% if evento.publicado %}
+                <a href="cambiarEstadoEvento.php?ev={{evento.id}}&tip={{tip}}&estado=0" ><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+                {% else %}
+                <a href="cambiarEstadoEvento.php?ev={{evento.id}}&tip={{tip}}&estado=1"><i class="fas fa-upload"></i></a>
+                {% endif %}
+                {% endif %}
+                
+            </div>
+        {% endblock %}  
+
+        {% block central %}
+            <div id="CentralEvento">
+                <div id="CentralEvento1">
+                <article> 
+                    <h1>{{evento.titulo}}</h1>
+                    <h2>{{evento.fecha}} </h2>              
+                    <h3>Organizado por {{evento.autor}}</h3>
+                    <div id="imagen1">
+                        <img alt="imagen1" src="./imagenes/{{evento.imagen[0].imagen}}"/>
+                        <p>Foto promocion de {{evento.imagen[0].descripcion}}</p>
+                    </div>
+                    <p>{{evento.texto}}</p>
+
+                </article>
+                </div>
+                {% if evento.imagen!=0 %}
+                <div id="Galeria">
+                    <h1>GALERIA</h1>
+                    {% set cont=0 %}
+                    {% for imagen in evento.imagen %}
+                        {% if cont!=0 %}
+                            <div id="fotos"><img alt="imagen1" src="./imagenes/{{imagen.imagen}}"/></div>
+                        {% endif %}
+                        {% set cont=cont+1 %}
+                    {% endfor %}
+
+                </div>
+                {% endif %}
+            
+            </div>
+                <aside id="comentarios">
+                    <h1 onclick="mostrar();">COMENTARIOS</h1>
+                    <div id="cerrar"  style="display: none">
+                        <div id="tablon">
+                            {% for comentario in evento.comentario %}
+                                <div id="comen">
+                                    <p id="nombre-comen ">{{comentario.nombre}}
+                                        {% if user.moderador %}<a href="eliminarComentario.php?comen={{comentario.id}}&ev={{evento.id}}"><i class="fas fa-trash-alt"
+                                            aria-hidden="true"></i></a><a href="modificarComentario.php?comen={{comentario.id}}&ev={{evento.id}}">
+                                                <i class="fa fa-pencil" ></i></a>{% endif %}</p>
+                                    <p id="fecha-comen"> {{comentario.fecha}}</p>
+
+                                    <p id="Comentario-comen">{{comentario.texto}}</p>
+                                    {% if comentario.editado %}
+                                    <p id="editado-comen">Este comentario ha sido editado</p>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                            
+                        </div>
+                        {% if user %}
+                        <form onsubmit="return Enviar();" action="aniadirComentario.php?ev={{evento.id}}" method="post" id="formu" >
+                            <div style="display: none;"><label for="fname">Nombre:</label><br>
+                            <input type="text" id="fname" name="fname" value="{{user.nombre}}"><br>
+
+                            <label for="lname">Correo:</label><br>
+                            <input type="text" id="correo" name="correo" value="{{user.email}}"><br></div>
+
+                            <label for="fname">Comentario:</label><br>
+                            <textarea name="coment" id="coment" rows="5" onkeypress="palabrasProhibidas()"></textarea><br>
+                            <input type="submit" value ="Enviar" id="boton-enviar"></input>
+                        </form>
+                        {% endif %}
+                </div>
+            </aside>
+            <div id="etiquetas">
+                {% if user.gestor_sitio %}
+                <form action="aniadirEtiqueta.php" method="post" id="formu">
+                    <input type="text" name="id" style="display:none" id="id" value="{{evento.id}}" /><br>
+                    <label for="fname">Añadir etiqueta:</label><br>
+                    <input type="text" id="eti" name="eti" value=""><input type="submit" value="Enviar" id="boton-enviar"></input>
+                </form>
+
+                {% endif %}{% if evento.etiquetas %}
+
+                <h1>Etiquetas</h1>
+                {% for etiqueta in evento.etiquetas %}
+                <a id="etiquetilla">{{etiqueta}} {% if user.gestor_sitio %} <a href="eliminarEtiqueta.php?ev={{evento.id}}&eti={{etiqueta}}" id="linkEtiquetilla"><i class="fas fa-times"></i></a> {% endif %}</a>
+                {% endfor %}
+                {% endif %}
+            </div>
+
+
+        {% endblock %}

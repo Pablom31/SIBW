@@ -1,0 +1,77 @@
+
+    {% extends "padre.html" %}
+    
+    {% block aniadirHEAD %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/formulario.js" defer></script>
+    <script src="js/ajax.js" ></script>
+    {% endblock %}
+    
+
+
+        {% block aniadirLateral %}
+        <div id="InfoEvento">
+            {% if user.gestor_sitio %}
+            <a href="aniadirEvento.php"><h1>AÑADIR EVENTO </h1></a>
+            {% endif %}
+        
+        </div>
+        {% endblock %}
+
+    {% block central %}
+
+
+
+    <div id="Central">
+        <div class="buscador" id="buscador">
+            <div class="barra" id="barra">
+                <input type="search" id="search" class="search" onkeyup="hacerPeticionAjax()" placeholder="Search...">
+                <button class="icon" id="boton" onclick="hacerPeticionAjax()"><i class="fa fa-search"></i></button>
+                <div id="resultados"><table> <tbody id="tablaResultados"> </tbody></table> </div>
+            </div>
+            {% if user.gestor_sitio %}
+            <ul class="visibilidad">
+                <li><a href="">Visibilidad<i class="fas fa-caret-right"></i></a>
+                    <ul class="options">
+                        <li><a href="index.php?tip=2">Todos</a></li>
+                        <li> <a href="index.php?tip=1">Publicados</a></li>
+                        <li> <a href="index.php?tip=0">No publicados</a></li>
+                    </ul>
+                </li>
+            </ul>
+            {% endif %}
+        </div>
+
+        <table class="eventos">
+            {% set var = 0 %}
+            {% for evento in eventos %}
+                {% if var%3==0 %}
+                    <tr>
+                {% endif %}
+                
+                <td>
+                    {% if user.gestor_sitio %}
+                    <div id="opcionesevento">
+                        {% if evento.publicado %}
+                        <a href="cambiarEstadoEvento.php?ev={{evento.id}}&tip={{tip}}&estado=0"><i class="fa fa-eye-slash" aria-hidden="true" id="ojo"></i></a>
+                        {% else %}
+                        <a href="cambiarEstadoEvento.php?ev={{evento.id}}&tip={{tip}}&estado=1"><i class="fas fa-upload" id="subida"></i></a>
+                        {% endif %}
+                        <a href="modificarEvento.php?ev={{evento.id}}"><i class="fas fa-pencil-alt" id="lapizEvento" ></i></a>
+                        <a href="eliminarEvento.php?ev={{evento.id}}"><i class="fa fa-trash" id="basura" aria-hidden="true"></i></a>
+                    </div>
+                    {% endif %}
+                    <a href="evento.php?ev={{evento.id}}&imp=0" {% if not evento.publicado %} class="oculto" {% endif %}>
+                        <span>{{evento.nombre}}</span><img src="./imagenes/{{evento.imagen[0]}}">
+                    </a>
+                </td>
+
+                {% if var%3==2 %}
+                </tr>
+                {% endif %}
+                {% set var=var+1 %}
+            {% endfor %}
+        </table>
+    </div>
+    {% endblock %}
+

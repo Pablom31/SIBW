@@ -1,0 +1,148 @@
+*{
+    font-family:Georgia, 'Times New Roman', Times, serif
+
+}
+
+body {
+	width: 1500px;
+	margin: auto;
+    background: white;
+    transform:scale(0.75);
+    transform-origin: top;
+}
+
+/**************************************************************************/
+/* Cabecera *******************************************************************/
+/**************************************************************************/
+
+#cabecera{
+    text-align: center;
+}
+
+/**************************************************************************/
+/* MENU *******************************************************************/
+/**************************************************************************/
+
+#menu{
+    display:none;
+}
+
+
+
+/**************************************************************************/
+/* LATERAL *******************************************************************/
+/**************************************************************************/
+
+#main aside {
+    display: none;
+}
+
+
+/**************************************************************************/
+/* eVENTOS *******************************************************************/
+/**************************************************************************/
+
+#main #CentralEvento{
+    width: 75%;
+    display: inline-block;
+    height: auto;
+    margin-top: 50px;
+    margin-left: 10%;
+    text-indent: 40px;
+}
+#main #CentralEvento h1{
+    text-align: center;
+    margin-top:-30px;
+    font-size: 50px;
+    margin-bottom: 10;
+    
+}
+#CentralEvento h2{
+    font-size: 30px;
+}
+#CentralEvento p{
+    font-size: 25px;
+}
+
+/**************************************************************************/
+/* EVENTO 1 *******************************************************************/
+/**************************************************************************/
+
+#CentralEvento1 img{
+    float: right;
+    height: 500px;
+    width:400px;
+    margin-top:-100px;
+}
+
+
+/**************************************************************************/
+/* EVENTO 2 *******************************************************************/
+/**************************************************************************/
+
+#main #CentralEvento2{
+    margin-left: 20px;
+    display:inline-block;
+    height: auto;
+    text-align: left;
+
+}
+
+#CentralEvento2 #imagen img{
+    float: right;
+    display:inline-block;
+}
+#CentralEvento2 #imagen2 img{
+    float: left;
+    height: 300px;
+    width:500px;
+    display:inline-block;
+    margin-right: 20px;
+}
+
+
+
+/**************************************************************************/
+/* PIE *******************************************************************/
+/**************************************************************************/
+
+#Bajo {
+    margin: 20px 20px;
+    clear: both;
+    color: #333333;
+    
+}
+
+#Bajo h1 {
+    font-weight: bolder;
+    font-size: 40px;
+    color: #f8fcff;
+    border-bottom: 2px solid #333333;
+    margin-bottom: 10px;
+}
+
+#Bajo > #contacto > ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+#Bajo > #contacto > ul > li {
+    margin: 5px;
+    font-size: 20px;
+    color: #333333;
+}
+
+#Bajo > #contacto > ul > li a {
+    color: #333333;
+}
+
+
+#Bajo > #copyright {
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+}
+
+
+
+

@@ -1,0 +1,37 @@
+{% extends "padre.html" %}
+
+{% block central %}
+
+<div class="modify" id="modificaPermisos">
+    <h1>Comentarios</h1><br>
+
+    <div id="lista">
+        {% for comentario in comentarios %}
+
+
+        <div id="comen">
+            <p id="EVENTO">EVENTO: {{comentario.evento}}</p>
+            <p id="NOMBRE">{{comentario.nombre}}
+                {% if user.moderador %}<a href="eliminarComentario.php?comen={{comentario.id}}&ev={{evento.id}}"><i
+                        class="fas fa-trash-alt" aria-hidden="true" id="icono"></i></a><a
+                    href="modificarComentario.php?comen={{comentario.id}}&ev={{evento.id}}">
+                    <i class="fa fa-pencil" id="icono"></i></a>{% endif %}</p>
+            <p id="FECHA"> {{comentario.fecha}}</p>
+    
+            <p id="COMENTARIO">{{comentario.texto}}</p>
+            {% if comentario.editado %}
+            <p id="EDITADO">Este comentario ha sido editado</p>
+            {% endif %}
+        </div>
+
+
+
+        {% endfor %}
+
+
+
+</div>
+
+
+
+{% endblock %}

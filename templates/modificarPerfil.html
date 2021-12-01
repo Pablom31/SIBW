@@ -1,0 +1,47 @@
+{% extends "padre.html" %}
+
+{% block aniadirHEAD %}
+<script type="text/javascript" src="js/formulario.js" defer></script>
+{% endblock %}
+
+
+{% block central %}
+
+<div class="modify" id="modificaPerfil">
+    <h1>Editar Perfil</h1><br>
+    <form action="modificarPerfil.php" method="post">
+        <a>Nombre:<br></a>
+            <input type="text" name="nombre" id="nombre" value="{{user.nombre}}"/><br>
+            <input type="submit" value="Confirmar" id="confirmar"/><br><br>
+
+        {% if falloRegistro %}
+        <div id="fallo"><a> Usuario ya registrado<i class="fas fa-user-times"></i></a></div>
+        {% endif %}
+    </form>
+    <form action="modificarPerfil.php" method="post">
+        <a>Contraseña:<br></a>
+        <input type="password" minlength=5 name="password1" id="password1" /><br>
+    
+        <input type="submit" value="Confirmar" id="confirmar"/><br><br>
+
+    </form>
+
+    <form action="modificarPerfil.php" method="post">
+        <a>Correo:<br></a>
+        <input type="email" name="email1" id="email1" value="{{user.email}}"/><br>
+    
+        <input type="submit" value="Confirmar"  id="confirmar"/><br><br><br>
+
+    </form>
+
+    <form action="index.php" method="post">
+    
+        <input type="submit" value="Atrás" /><br>
+    
+    </form>
+
+</div>
+
+
+
+{% endblock %}
